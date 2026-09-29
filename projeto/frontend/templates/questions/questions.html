@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionário</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/questions.css') }}?v=4">
+    <script src="{{ url_for('static', path='/js/dashboard-menu.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/questions.js') }}?v=4"></script>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="questionario-page" data-hero-url="{{ url_for('get_hero') }}">
+
+        <header id="questionario-header">
+            <a id="logo">
+                <img src="{{ url_for('static', path='/images/MENTISTECH_logo.png') }}" alt="MentisTech">
+            </a>
+
+            <div class="dashboard-menu">
+                <button class="menu-toggle" id="dashboard-menu-toggle" type="button" aria-expanded="false"
+                    aria-haspopup="true" aria-controls="dashboard-menu-list">
+                    <span class="menu-icone" aria-hidden="true"></span>
+                    MENU
+                </button>
+
+                <div class="menu-list" id="dashboard-menu-list" role="menu" hidden>
+                    <a class="menu-item" href="{{ url_for('get_hero') }}" role="menuitem">Painel</a>
+                    <a class="menu-item" href="{{ url_for('get_dashboards') }}" role="menuitem">Dashboards</a>
+                    <button class="menu-item menu-item--danger" id="logout-button" type="button"
+                        role="menuitem">Sair</button>
+                </div>
+            </div>
+        </header>
+
+        <main id="questionario-main">
+            <section class="questionario-topo">
+                <p class="topo-label">QUESTIONÁRIO</p>
+                <p class="passo" id="passo-atual">Pergunta 1 de 6</p>
+
+                <div class="progresso" id="progresso" aria-label="Progresso do questionário">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </section>
+
+            <section class="questionario-corpo">
+                <h1 id="pergunta-titulo">Como você está se sentindo hoje?</h1>
+
+                <form class="questionario-form" id="questionario-form">
+                    <div class="opcoes" id="opcoes"></div>
+
+                    <div class="acoes">
+                        <button class="btn secundario" id="botao-voltar" type="button">SAIR</button>
+                        <button class="btn" id="botao-proximo" type="submit">PRÓXIMO</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <footer id="questionario-footer">
+            <p>&copy; 2026 Mentistech</p>
+        </footer>
+
+        <div class="modal-overlay" id="modal-overlay">
+            <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+                <p class="modal-label" id="modal-label">CONFIRMAÇÃO</p>
+                <h2 class="modal-titulo" id="modal-titulo">Título do pop-up</h2>
+                <p class="modal-texto" id="modal-texto">Texto do pop-up.</p>
+
+                <div class="modal-acoes">
+                    <button class="btn secundario" id="modal-cancelar" type="button">Cancelar</button>
+                    <button class="btn" id="modal-confirmar" type="button">Confirmar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

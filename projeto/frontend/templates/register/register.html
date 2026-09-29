@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="static/css/global.css">
+    <link rel="stylesheet" href="static/css/register.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="tela-auth">
+
+        <header id="auth-header">
+            <div id="logo">
+                <img src="{{ url_for('static', path='/images/MENTISTECH_logo.png') }}" alt="MentisTech">
+            </div>
+
+            <a href="{{url_for('get_home')}}" class="voltar">VOLTAR</a>
+        </header>
+
+        <main id="auth-main">
+            <section class="auth-card" id="auth-card">
+                <div class="auth-switch" role="tablist" aria-label="Alternar entre criar conta e login">
+                    <button class="switch-btn active" type="button" data-mode="register" aria-selected="true">Criar
+                        conta</button>
+                    <button class="switch-btn" type="button" data-mode="login" aria-selected="false">Entrar</button>
+                </div>
+
+                <div class="auth-panel auth-panel--register" id="register-panel" role="tabpanel">
+                    <h1>CRIAR CONTA</h1>
+
+                    <form class="auth-form" id="register-form">
+                        <div class="campo">
+                            <label for="nome">NOME</label>
+                            <input type="text" id="nome" name="nome" autocomplete="name" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="cargo">CARGO</label>
+                            <input type="text" id="cargo" name="cargo">
+                        </div>
+
+                        <div class="campo">
+                            <label for="time">TIME</label>
+                            <input type="text" id="time" name="time">
+                        </div>
+
+                        <div class="campo">
+                            <label for="cadastro-email">EMAIL</label>
+                            <input type="email" id="cadastro-email" name="email" autocomplete="email" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="cadastro-senha">SENHA</label>
+                            <input type="password" id="cadastro-senha" name="senha" autocomplete="new-password"
+                                minlength="6" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="confirmar-senha">CONFIRMAR SENHA</label>
+                            <input type="password" id="confirmar-senha" name="confirmar-senha"
+                                autocomplete="new-password" minlength="6" required>
+                        </div>
+
+                        <p class="auth-message" id="register-message" aria-live="polite"></p>
+
+                        <button class="btn" type="submit">CADASTRAR</button>
+                    </form>
+                </div>
+
+                <div class="auth-panel auth-panel--login" id="login-panel" role="tabpanel" hidden>
+                    <h1>ENTRAR</h1>
+
+                    <form class="auth-form" id="login-form">
+                        <div class="campo">
+                            <label for="login-email">EMAIL</label>
+                            <input type="email" id="login-email" name="email" autocomplete="email" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="login-senha">SENHA</label>
+                            <input type="password" id="login-senha" name="senha" autocomplete="current-password"
+                                required>
+                        </div>
+
+                        <p class="auth-message" id="login-message" aria-live="polite"></p>
+
+                        <button class="btn" type="submit">ENTRAR</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer id="auth-footer">
+            <p>&copy; 2026 Mentistech</p>
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', path='/js/register.js') }}"></script>
+</body>
+
+</html>

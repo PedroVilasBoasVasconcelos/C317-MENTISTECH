@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/global.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/hero.css') }}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="painel">
+
+        <header id="dashboard-header">
+            <div id="logo">
+                <img src="{{ url_for('static', path='/images/MENTISTECH_logo.png') }}" alt="MentisTech">
+            </div>
+
+            <div class="dashboard-menu">
+                <button class="menu-toggle" id="dashboard-menu-toggle" type="button" aria-expanded="false"
+                    aria-haspopup="true" aria-controls="dashboard-menu-list">
+                    <span class="menu-icone" aria-hidden="true"></span>
+                    MENU
+                </button>
+
+                <div class="menu-list" id="dashboard-menu-list" role="menu" hidden>
+                    <a class="menu-item" href="{{ url_for('get_hero') }}" role="menuitem">Painel</a>
+                    <a class="menu-item" href="{{ url_for('get_dashboards') }}" role="menuitem">Dashboards</a>
+                    <button class="menu-item menu-item--danger" id="logout-button" type="button"
+                        role="menuitem">Sair</button>
+                </div>
+            </div>
+        </header>
+
+        <main id="dashboard-main">
+            <section class="boas-vindas">
+                <p class="topo-label">BOAS-VINDAS</p>
+                <h1>Olá, <span id="primeiro-nome">[seu nome]</span></h1>
+                <p class="texto-suporte">Seja bem-vindo de volta ao sistema</p>
+                <a class="btn secundario" href="/questions">COMEÇAR CHECK-IN</a>
+            </section>
+
+            <section class="bloco">
+                <h2>RESUMO RÁPIDO</h2>
+
+                <div class="resumo-grid">
+                    <article class="info-card">
+                        <div class="card-topo">
+                            <span class="card-icone card-icone--nivel"></span>
+                            <small>NÍVEL ATUAL</small>
+                        </div>
+                        <strong id="nivel-atual-valor">Carregando...</strong>
+                        <p id="nivel-atual-texto">ultimo check-in</p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-topo">
+                            <span class="card-icone card-icone--checkins"></span>
+                            <small>CHECK-INS</small>
+                        </div>
+                        <strong id="total-checkins-valor">Carregando...</strong>
+                        <p id="total-checkins-texto">total realizado</p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-topo">
+                            <span class="card-icone card-icone--tendencia"></span>
+                            <small>TENDÊNCIA</small>
+                        </div>
+                        <strong id="tendencia-valor">Carregando...</strong>
+                        <p id="tendencia-texto">comparando check-ins</p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-topo">
+                            <span class="card-icone card-icone--proximo"></span>
+                            <small>PRÓXIMO</small>
+                        </div>
+                        <strong id="proximo-checkin-valor">Carregando...</strong>
+                        <p id="proximo-checkin-texto">consultando agenda</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="duas-colunas">
+                <div class="bloco">
+                    <h2>CONTATO</h2>
+                    <span>Encontrou algum problema com o resultado, deseja entender melhor o que está sentindo ou
+                        precisa agendar um atendimento com um de nossos profissionais? Sinta-se à vontade para entrar em
+                        contato com um de nossos especialistas.</span>
+                </div>
+
+                <div class="bloco">
+                    <form class="contato-form" id="contato-form">
+                        <div class="campo">
+                            <label for="duvida">DÚVIDA</label>
+                            <textarea id="duvida" name="duvida" rows="4"
+                                placeholder="Descreva sua dúvida ou solicitação" required></textarea>
+                        </div>
+
+                        <div class="contato-feedback" id="contato-feedback" aria-live="polite"></div>
+
+                        <button class="btn secundario enviar" type="submit">ENVIAR MENSAGEM</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer id="dashboard-footer">
+            <p>&copy; 2026 Mentistech</p>
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', path='/js/dashboard-menu.js') }}"></script>
+    <script src="{{ url_for('static', path='/js/hero.js') }}"></script>
+</body>
+
+</html>

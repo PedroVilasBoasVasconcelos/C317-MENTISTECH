@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "question": "Você sentiu sobrecarga no trabalho neste mês?",
+    "type": "scale"
+  },
+  {
+    "id": 2,
+    "question": "Você sentiu apoio para lidar com as suas demandas nesse mês?",
+    "type": "scale"
+  },
+  {
+    "id": 3,
+    "question": "Há aspectos da sua vida pessoal que estão interferindo negativamente no seu trabalho ou que você precise de um apoio especial?",
+    "type": "scale"
+  },
+  {
+    "id": 4,
+    "question": "Você acredita que a cultura da empresa promove um ambiente inclusivo e acolhedor, onde as pessoas podem ser elas mesmas?",
+    "type": "scale"
+  },
+  {
+    "id": 5,
+    "question": "Minha liderança me apoiou adequadamente durante este mês.",
+    "type": "scale"
+  },
+  {
+    "id": 6,
+    "question": "A colaboração entre os membros da minha equipe foi eficaz neste mês.",
+    "type": "scale"
+  },
+  {
+    "id": 7,
+    "question": "Sinto que desempenhei minhas atividades de forma satisfatória neste mês.",
+    "type": "scale"
+  },
+  {
+    "id": 8,
+    "question": "Você sente que foi reconhecido(a) de forma proporcional às suas contribuições neste mês?",
+    "type": "scale"
+  },
+  {
+    "id": 9,
+    "question": "Você acha que a empresa oferece condições necessárias para o seu crescimento profissional?",
+    "type": "scale"
+  },
+  {
+    "id": 10,
+    "question": "De forma geral, estou satisfeito(a) com minha experiência na empresa neste mês.",
+    "type": "scale"
+  }
+]
